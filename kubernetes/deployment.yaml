@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-ecommerce
+  labels:
+    app: simple-ecommerce
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simple-ecommerce
+  template:
+    metadata:
+      labels:
+        app: simple-ecommerce
+    spec:
+      containers:
+      - name: simple-ecommerce
+        image: mbohram/simple-ecommerce
+        imagePullPolicy: Always
+      imagePullSecrets:
+      - name: regcred

@@ -2,8 +2,10 @@
 
 eksctl create cluster \
 --name capstone-cluster \
+--node-type t3.medium \
+--nodegroup-name capstone-nodegrp \
 --version 1.20 \
---region us-west-2 \
---fargate
+--nodes 2 \
+--managed
 
 eksctl get cluster --name=capstone-cluster
