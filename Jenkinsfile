@@ -12,12 +12,11 @@ pipeline {
     IMAGE_TAG = "${DOCKER_REPO}:${BUILD_NUMBER}"
   }
   stages {
-    stage("Build-NPM") {
+    stage("Install-dependencies") {
       steps {
         container("npm") {
           sh """
           npm install
-          npm run build
           """
         }
       }
@@ -26,8 +25,16 @@ pipeline {
       steps {
          container("npm") {
           sh """
-          npm install
           npm run lint
+          """
+        }
+      }
+    }
+    stage("Build-NPM") {
+      steps {
+        container("npm") {
+          sh """
+          npm run build
           """
         }
       }

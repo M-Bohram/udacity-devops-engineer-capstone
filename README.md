@@ -35,3 +35,5 @@ In the end, the app is deployed to the cluster and accessible to users.
 3. create the first pipeline using Blue Ocean plugin or using the traditional way, you have to create a personal access token (PAT) of your GitHub account containing at least repost and user.email scopes.
 4. create a webhook in the GitHub repository so Jenkins will be notified with code changes.
 5. after running the tests, delete the cluster using ```delete-cluster.sh``` script in ```scripts``` directory.
+
+Please note that I removed the rule ```react/prop-types``` from ```eslintrc.json``` to fail the linter stage.
