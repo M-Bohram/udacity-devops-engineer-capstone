@@ -37,3 +37,5 @@ In the end, the app is deployed to the cluster and accessible to users.
 5. after running the tests, delete the cluster using ```delete-cluster.sh``` script in ```scripts``` directory.
 
 Please note that I removed the rule ```react/prop-types``` from ```eslintrc.json``` to fail the linter stage.
+
+The deployment strategy used is the default of kubernetes which is ```rolling updates```.
