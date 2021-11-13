@@ -27,3 +27,11 @@ In the end, the app is deployed to the cluster and accessible to users.
 - Jenkins
 - Docker
 - Kubernetes
+- Helm
+
+### Steps:
+1. create EKS cluster using ```create-cluster.sh``` script in ```scripts``` directory.
+2. deploy Jenkins using ```deploy.sh``` in ```jenkins-deployment``` directory, then follow the instructions to get the admin password and to login.
+3. create the first pipeline using Blue Ocean plugin or using the traditional way, you have to create a personal access token (PAT) of your GitHub account containing at least repost and user.email scopes.
+4. create a webhook in the GitHub repository so Jenkins will be notified with code changes.
+5. after running the tests, delete the cluster using ```delete-cluster.sh``` script in ```scripts``` directory.
